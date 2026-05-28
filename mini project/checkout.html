@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+</head>
+<body>
+
+<h2>Checkout Page</h2>
+
+<h3 id="productName"></h3>
+<p id="productPrice"></p>
+
+<button onclick="goNext()">Continue</button>
+
+<script>
+// Read info from URL
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("productName").innerText =
+    "Product: " + params.get("name");
+
+document.getElementById("productPrice").innerText =
+    "Price: $" + params.get("price");
+
+// Go to final page
+function goNext() {
+    window.location.href = "finalpage.html";
+}
+</script>
+
+</body>
+</html>
